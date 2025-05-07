@@ -1,0 +1,75 @@
+# ✍️ Handwritten Digits Classification using Neural Networks
+
+👨‍💻 Project Summary:
+─────────────────────
+This project classifies handwritten digits (0–9) using a basic feedforward neural network (also known as a dense or fully connected network) trained on the famous MNIST dataset. This forms the starting point for understanding deep learning and prepares you for more advanced architectures like CNNs.
+
+📂 Dataset:
+────────────
+• 📦 Dataset Used: `keras.datasets.mnist`
+• 🧠 Description: 28x28 grayscale images of handwritten digits
+• 👨‍🎓 Total Training Samples: 60,000
+• 🧪 Total Testing Samples: 10,000
+
+🛠️ Project Flow:
+─────────────────
+1. 📥 **Data Loading** — Loaded the MNIST dataset from Keras.
+2. 🔍 **Data Visualization** — Matplotlib used to view samples.
+3. 🔄 **Data Preprocessing** — 
+   • Normalized pixel values by dividing by 255  
+   • Flattened 2D images (28x28) into 1D vectors (784)
+4. 🧠 **Model Building** —
+   • Input Layer: 784 neurons  
+   • Hidden Layer: 100 neurons with ReLU activation  
+   • Output Layer: 10 neurons with Softmax activation
+5. 🧪 **Model Training** — Trained over 5 epochs with `adam` optimizer.
+6. 📊 **Evaluation** — Evaluated the model on test data using `model.evaluate`.
+7. 🔍 **Prediction & Visualization** — Used `model.predict` to classify and visualize predictions.
+8. 💾 **Model Saving & Loading** — Saved the model using `.h5` format.
+
+⚙️ Model Architecture:
+───────────────────────
+• **Input Layer**: 784 features (flattened 28x28 image)  
+• **Hidden Layer**: 100 neurons, ReLU activation  
+• **Output Layer**: 10 neurons, Softmax activation (for digits 0–9)
+
+📈 Accuracy/Loss:
+─────────────────
+• ⚡ Without Hidden Layer + No Scaling → Accuracy ≈ 88%, High Loss  
+• ⚡ With Hidden Layer + No Scaling → Accuracy ≈ 94%  
+• ✅ With Hidden Layer + Scaling → Accuracy ≈ 98%, Low Loss  
+
+🧠 Key Observations:
+─────────────────────
+• 🔼 Increasing epochs improves accuracy and reduces loss.  
+• 📉 Scaling (normalization) significantly boosts performance.  
+• 🔥 Softmax is essential for multi-class classification.
+
+🎯 Conclusion:
+──────────────
+Even with a basic neural network structure, we achieved strong classification performance by:
+• Flattening the image  
+• Normalizing the data  
+• Using one hidden layer with ReLU  
+• Softmax for multi-class prediction
+
+This is the foundation of Deep Learning, and prepares you for CNNs 🔥
+
+💾 To Run:
+───────────
+```bash
+pip install tensorflow keras matplotlib numpy
+python handwritten_digits_classification.py
+```
+
+🧪 Optional: To test model loading
+```python
+from tensorflow import keras
+model = keras.models.load_model('digits_model.h5')
+```
+
+🚀 Next Steps:
+───────────────
+• Deploy this using **Streamlit** to accept user-drawn/uploaded images  
+• Try a **Convolutional Neural Network (CNN)** to boost performance  
+• Add more **data augmentation** to improve robustness
