@@ -1,4 +1,4 @@
-# ✍️ Handwritten Digits Classification using Neural Networks
+# Handwritten Digits Classification using Neural Networks
 # Deployed Using Streamlit!
 
 👨‍💻 Project Summary:
